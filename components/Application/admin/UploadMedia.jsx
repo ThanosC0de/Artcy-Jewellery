@@ -11,7 +11,7 @@ const UploadMedia = () => {
     onError={handleOnError}
     onQueuesEnd={handleOnError}
 
-    
+    p
     ></CldUploadWidget>
   );
 };
