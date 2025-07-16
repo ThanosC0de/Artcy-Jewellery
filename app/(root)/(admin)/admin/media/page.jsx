@@ -12,7 +12,7 @@ const MediaPage = () => {
   return (
     <div>
       <BreadCrumb breadcrumbData={breadcrumbData}/>
-      <UploadMedia/>
+      <UploadMedia />
     </div>
   );
 };
