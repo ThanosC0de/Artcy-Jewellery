@@ -1,3 +1,4 @@
+'use client'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,6 +24,7 @@ const UserDropdown = () => {
           <AvatarImage src={Logo1.src} />
         </Avatar>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent className="me-5 w-44">
         <DropdownMenuLabel>
           <p className="font-semibold">{auth?.name}</p>
@@ -35,12 +37,14 @@ const UserDropdown = () => {
             New Product
           </Link>
         </DropdownMenuItem>
+
         <DropdownMenuItem asChild>
           <Link href="" className="cursor-pointer">
             <MdOutlineShoppingBag />
             Orders
           </Link>
         </DropdownMenuItem>
+        
         <LogoutButton />
       </DropdownMenuContent>
     </DropdownMenu>

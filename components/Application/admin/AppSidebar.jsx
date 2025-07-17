@@ -29,7 +29,7 @@ const AppSidebar = () => {
           <Image
             src={Logo.src}
             height={50}
-            className="block dark:block h-[60px] w-auto"
+            className="h-[60px] w-auto"
             width={50}
             alt="logo"
           />
