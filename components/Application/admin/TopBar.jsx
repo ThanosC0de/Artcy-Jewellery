@@ -13,7 +13,7 @@ const TopBar = () => {
     items-center justify-between bg-white dark:bg-card '>
 
         <div>
-            Search comnponent
+            Search component
         </div>
         <div className='flex items-center gap-2 '>
             <ThemeSwitch/>

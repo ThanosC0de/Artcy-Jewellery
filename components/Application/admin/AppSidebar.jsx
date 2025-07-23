@@ -59,8 +59,8 @@ const AppSidebar = () => {
                 {menu?.submenu && menu.submenu.length > 0 && 
                   <CollapsibleContent>
                   <SidebarMenuSub>
-                    {menu.submenu.map((submenuItem, submenuIndext)=>(
-                        <SidebarMenuSubItem key={submenuIndext}>
+                    {menu.submenu.map((submenuItem, submenuIndex)=>(
+                        <SidebarMenuSubItem key={submenuIndex}>
                           <SidebarMenuButton asChild className="px-2 py-5">
                             <Link href={submenuItem?.url}>
                               {submenuItem?.title}

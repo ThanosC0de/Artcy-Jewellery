@@ -253,8 +253,7 @@ function SidebarRail({
   const { toggleSidebar } = useSidebar()
 
   return (
-    (<button
-      data-sidebar="rail"
+    (<Button      data-sidebar="rail"
       data-slot="sidebar-rail"
       aria-label="Toggle Sidebar"
       tabIndex={-1}

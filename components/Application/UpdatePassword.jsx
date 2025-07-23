@@ -20,6 +20,7 @@ import axios from "axios";
 import { showToast } from "@/lib/showToast";
 import { useRouter } from "next/navigation";
 import { WEBSITE_LOGIN } from "@/routes/WebsiteRoute";
+import { Button } from "../ui/button";
 
 const UpdatePassword = ({email}) => {
   const router = useRouter();
@@ -98,10 +99,10 @@ const UpdatePassword = ({email}) => {
                         <Input type={isTypePassword ? "password" : "text"}
                           placeholder="***********" {...field}/>
                       </FormControl>
-                      <button className="absolute top-1/2 right-2 cursor-pointer"
+                      <Button className="absolute top-1/2 right-2 cursor-pointer"
                         type="button" onClick={()=>setIsTypePassword(!isTypePassword)} >
                         {isTypePassword ? < FaRegEyeSlash /> : <FaRegEye />}
-                      </button>
+                      </Button>
                       <FormMessage />
                     </FormItem>
                   )}

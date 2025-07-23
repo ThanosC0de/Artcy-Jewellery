@@ -14,6 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { zSchema } from "@/lib/zodSchema";
 import { showToast } from "@/lib/showToast";
 import axios from "axios";
+import { Button } from "../ui/button";
 
 const OtpVerification = ({ email, onSubmit, loading }) => {
   const [isResendingOtp, setIsResendingOtp] = useState(false);
@@ -99,13 +100,13 @@ const OtpVerification = ({ email, onSubmit, loading }) => {
             />
             <div className="text-center mt-5">
               {!isResendingOtp ? (
-                <button
+                <Button
                   onClick={resendOTP}
                   type="button"
                   className="text-yellow-500 cursor-pointer hover:underline"
                 >
                   Resend OTP
-                </button>
+                </Button>
               ) : (
                 <span className="text-md">Resending...</span>
               )}

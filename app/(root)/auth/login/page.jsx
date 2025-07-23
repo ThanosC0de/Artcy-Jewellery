@@ -28,6 +28,7 @@ import { useDispatch } from "react-redux";
 import { login } from "@/store/reducer/authReducer";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ADMIN_DASHBOARD } from "@/routes/AdminPanelRoute";
+import { Button } from "@/components/ui/button";
 
 const loginpage = () => {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ const loginpage = () => {
     .pick({
       email: true,
     })
-    .extend({password: z.string().min("3", "Password fied is required")})
+    .extend({password: z.string().min("3", "Password filed is required")})
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -53,7 +54,7 @@ const loginpage = () => {
   });
 
   const handleLoginSubmit = async (values) => {
-    // showToast("success", "Login Successfull");
+    // showToast("success", "Login successful");
     try {
       setLoading(true);
       const { data: loginResponse } = await axios.post(
@@ -154,13 +155,13 @@ const loginpage = () => {
                               {...field}
                             />
                           </FormControl>
-                          <button
+                          <Button
                             className="absolute top-1/2 right-2 cursor-pointer"
                             type="button"
                             onClick={() => setIsTypePassword(!isTypePassword)}
                           >
                             {isTypePassword ? <FaRegEye /> : <FaRegEyeSlash />}
-                          </button>
+                          </Button>
                           <FormMessage />
                         </FormItem>
                       )}
