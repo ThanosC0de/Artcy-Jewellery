@@ -155,13 +155,13 @@ const loginpage = () => {
                               {...field}
                             />
                           </FormControl>
-                          <Button
+                          <button
                             className="absolute top-1/2 right-2 cursor-pointer"
                             type="button"
                             onClick={() => setIsTypePassword(!isTypePassword)}
                           >
                             {isTypePassword ? <FaRegEye /> : <FaRegEyeSlash />}
-                          </Button>
+                          </button>
                           <FormMessage />
                         </FormItem>
                       )}

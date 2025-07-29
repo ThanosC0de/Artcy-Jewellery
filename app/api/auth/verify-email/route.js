@@ -10,7 +10,7 @@ export async function POST(request) {
     const { token } = await request.json();
 
     if (!token) {
-      return response(false, 400, "Missinvg token.");
+      return response(false, 400, "Missing token.");
     }
     const secret = new TextEncoder().encode(process.env.SECRET_KEY);
     const decoded = await jwtVerify(token, secret);
@@ -28,7 +28,7 @@ export async function POST(request) {
     user.isEmailVerified = true;
     await user.save();
 
-    return response(true, 200, "Emailvarification success.");
+    return response(true, 200, "Email verifications success.");
   } catch (error) {
     return catchError(error);
   }

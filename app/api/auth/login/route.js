@@ -14,13 +14,13 @@ export async function POST(request) {
         await connectDB();
         const payload = await request.json();
         
-        const validationScahema = zSchema.pick({
+        const validationSchema = zSchema.pick({
             email: true,
         }).extend({
             password: z.string()
         })
 
-        const validatedData = validationScahema.safeParse(payload)
+        const validatedData = validationSchema.safeParse(payload)
         if(!validatedData.success){
             return response(false, 401, "Invalid or missing input field.", validatedData.error)
         }
@@ -31,10 +31,10 @@ export async function POST(request) {
 
         const getUser = await UserModel.findOne({deletedAt: null, email}).select('+password')
         if(!getUser){
-            return response(false, 400, "Invalide login creadentials.")
+            return response(false, 400, "Invalid login Credentials.")
         }
 
-        // resend email varification link 
+        // resend email verification link 
 
         if(!getUser.isEmailVerified){
             const secret = new TextEncoder().encode(process.env.SECRET_KEY);
@@ -55,7 +55,7 @@ export async function POST(request) {
         const isPasswordVerified = await getUser.comparePassword(password)
 
         if(!isPasswordVerified){
-            return response(false, 400, "Invalide login creadentials.")
+            return response(false, 400, "Invalid login Credentials.")
         }
         
         

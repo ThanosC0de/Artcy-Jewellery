@@ -100,13 +100,13 @@ const OtpVerification = ({ email, onSubmit, loading }) => {
             />
             <div className="text-center mt-5">
               {!isResendingOtp ? (
-                <Button
+                <button
                   onClick={resendOTP}
                   type="button"
                   className="text-yellow-500 cursor-pointer hover:underline"
                 >
                   Resend OTP
-                </Button>
+                </button>
               ) : (
                 <span className="text-md">Resending...</span>
               )}
